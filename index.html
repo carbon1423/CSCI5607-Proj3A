@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project 3A Presentation — Carson Bockenhauer</title>
+  <style>
+    body {
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #1D2E28;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    code {
+      color: #cdd2ce;
+      font-size: 1;
+    }
+    strong {
+      color: cdd2ce;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      color: #cdd2ce;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .wrap {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #18392B;
+      border-radius: 10px;
+      border: 1px solid #14452F;
+    }
+    .meta {
+      color: #adb2ae;
+      font-size: 0.9rem;
+    }
+    .section-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #cdd2ce;
+    }
+    .notes {
+      font-size: 0.95rem;
+      margin-top: 2px;
+      line-height: 1.25;
+      color: #adb2ae;
+    }
+    .screenshot-row {
+
+
+      display: flex;
+      justify-content: center; 
+      gap: 20px;               
+      margin-top: 10px;
+    }
+    
+    .screenshot-block {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;  
+    }
+    
+    .screenshot-row img {
+      max-width: 400px;
+      max-height: 300px;
+      border: 1px solid #14452F;
+      border-radius: 10px;
+    }
+    
+    .screenshot-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #adb2ae;
+      margin-top: 6px;   
+    }
+    
+    .zip-link {
+      display: inline-block;
+      justify-content: center;
+      margin-top: 0px;
+      padding: 8px 12px;
+      background: #1D2E28;
+      color: #0A5Caf;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .zip-link-container {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <h1>Project 3A Presentation</h1>
+        <div class="meta">By: Carson Bockenhauer</div>
+      </div>
+      <div class="meta" style="text-align: right;">
+        Course: CSCI 5607<br/>
+        Date: Oct 24 2025
+      </div>
+    </header>
+
+    <section>
+      <div class="section-title">Challenges I Faced</div>
+      <p class="notes">
+        Some challenges I faced were with features for extra credit that I have yet to implement. I have been struggling with calculating the refraction vector, in my source code there is a commented out attempt. 
+      </p>
+    </section>
+
+    <section>
+      <div class="section-title">Files Included</div>
+      <ul class="notes">
+        <li><strong>Proj3A-Resources.zip — ZIP: </strong> Containing source code, and a working executable. There is also a folder for reference images.</li>
+        <li><strong>Executable OS:</strong> Built on Ubuntu 24.04.3 LTS</li>
+        <li><strong>Build steps:</strong>  <code>g++ -fsanitize=address -std=c++14 rayTrace_recursive.cpp -o ray</code></li>
+      </ul>
+      <div class="zip-link-container">
+        <a class="zip-link" href="./Proj3A-Resources.zip" download>
+          Download Proj3A-Resources.zip
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Raytracer and features</div>
+      <ul class="notes">
+        <li>Here I showcase a complex scene with custom camera placement, alternative FOVs, different output sizes, user specified background color, PNG output, multiple spheres, ambient lights, multiple point lights, basic sampling, Phong lighting model, and reflection</li>
+        <li> I will first show the base image with all the features then show alternative images that are tweaks to the scene file. The scene file is in my .zip and there are places with comments for alternative cameras, FOV, and output size. as far as lighting goes I commented out specific lights to show them not being there.
+        </li>
+      </ul>
+      <div class="screenshot-row">
+        <div class="screenshot-block"> 
+          <img src="./Images/spheres2(all-lights).png" alt="spheres2(all-lights).png">
+          <footer class="screenshot-footer"> Base image with all requirements
+          </footer>
+        </div>
+      </div>
+      <div class="screenshot-row">
+        <div class="screenshot-block"> 
+          <img src="./Images/spheres2(one-point-light).png" alt="spheres2(one-point-lights).png">
+          <footer class="screenshot-footer"> Here is the same scene with one of the lights removed.
+          </footer>
+       </div>  
+       <div class="screenshot-block"> 
+          <img src="./Images/spheres2(two-point-light).png" alt="spheres2(two-point-lights).png">
+          <footer class="screenshot-footer"> Here is the same scene with the other of the light removed.
+          </footer>
+        </div>
+      </div>
+      <div class="screenshot-row">
+        <div class="screenshot-block"> 
+          <img src="./Images/spheres2(ambient-light-only).png" alt="spheres2(ambient-light-only).png">
+          <footer class="screenshot-footer"> Now with all the lights removed leaving only ambient lighting.
+          </footer>
+        </div>
+      </div>
+      <div class="screenshot-row">
+        <div class="screenshot-block">
+          <img src="./Images/spheres2(camera-behind).png" alt="spheres2(camera-behind).png">
+          <footer class="screenshot-footer"> In this image we can see a different camera position (placed behind the original scene).</footer>
+        </div>  
+        <div class="screenshot-block">
+          <img src="./Images/spheres2(zoomed-in-fov-ha).png" alt="spheres2(zoomed-in-fov-ha).png">
+          <footer class="screenshot-footer"> In this image we can see the original scene at a zoomed in FOV</footer>
+        </div>  
+      </div>
+      <div class="screenshot-row">
+        <div class="screenshot-block">
+          <img src="./Images/spheres2(small-res).png" alt="spheres2(small-res).png">
+          <footer class="screenshot-footer">This is an example with a smaller output image size, it took around 1000 ms compared to the full size image taking around 8000 ms</footer>
+        </div>
+        <div class="screenshot-block">
+          <img src="./Images/spheres2(alternative-background).png" alt="spheres2(alternative-background).png">
+          <footer class="screenshot-footer">This is an image where the background has been changed to green.</footer>
+        </div>
+      </div>
+      <div class="screenshot-row">
+        <div class="screenshot-block"> 
+          <img src="./Images/progress-bar.gif" alt="progress-bar.gif">
+          <footer class="screenshot-footer"> This is just something I implemented to see how far along the render it was and I just thought it was cool</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+</body>
+</html>
